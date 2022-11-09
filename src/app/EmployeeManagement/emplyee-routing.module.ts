@@ -15,13 +15,13 @@ const routes: Routes = [
         
     },
     {
-        path: 'employeelist',
+        path: 'employees',
         component: EmployeelistComponent,
 
         
     },
     {
-        path:'employeelist/:id',
+        path:'employees/:id',
         component:EmployeeInfoComponent,
         canActivate: [AuthService,EmployeeDetailsGaurdService]    
     }

@@ -2,14 +2,16 @@
   <div>
     <h1 style="text-align: center;margin-left:1rem;margin-right: 1rem;"routerLink="">EMS</h1>
   </div>
+  <button style="margin-left:1rem;margin-right: 1rem;" routerLink="" >
+    Home</button>
   <ng-container *ngIf="!loggedIn">
-    <button style="margin-left:1rem;margin-right: 1rem;" routerLink="employee/login" >
+    <button style="margin-left:1rem;margin-right: 1rem;" routerLink="login" >
       Login</button>
   </ng-container>
-  <button style="text-align: center;" routerLink="employee/employeelist" >
+  <button style="text-align: center;" routerLink="employees" >
       List Of Employee's</button>
   <ng-container *ngIf='loggedIn' >
-    <button style="text-align: right;margin-left:47rem;margin-right: 1rem;" routerLink="employee/login" (click)="back()">
+    <button style="text-align: right;margin-left:47rem;margin-right: 1rem;" routerLink="login" (click)="back()">
       Logout</button>
   </ng-container>
 </nav>

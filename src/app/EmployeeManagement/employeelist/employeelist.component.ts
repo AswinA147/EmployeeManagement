@@ -1,56 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-import { Employeetype } from '../employeetype';
+import { IEmployeeDetails } from '../employeetype';
 import { EmpServiceService } from '../emp-service.service';
 import { Router } from '@angular/router';
-import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-employeelist',
-  template:`
-  <mat-grid-list cols='3' rowHeight="2:1"  >
-      <div *ngFor="let items of list"> 
+  template: ` <mat-grid-list cols="3" rowHeight="2:1">
+    <div *ngFor="let items of list">
       <mat-grid-tile (click)="show(items.EmployeeId)">
-        Employee Name : {{items.EmployeeName}} <br> Employee Phn : {{items.PhoneNumber}} <br>
-        Team : {{items.teamNumber}} 
+        Employee Name : {{ items.EmployeeName }} <br />
+        Employee Phn : {{ items.PhoneNumber }} <br />
+        Team : {{ items.teamNumber }}
       </mat-grid-tile>
-</div>
+    </div>
   </mat-grid-list>`,
-  styleUrls: ['./employeelist.component.css']
-  
+  styleUrls: ['./employeelist.component.css'],
 })
-
 export class EmployeelistComponent implements OnInit {
-  user:Employeetype|undefined;
-  
-  list: Employeetype[] = [];
+  user: IEmployeeDetails | undefined;
 
-  constructor(private employee: EmpServiceService,public router:Router) { }
+  list: IEmployeeDetails[] = [];
+
+  constructor(private employee: EmpServiceService, public router: Router) {}
 
   ngOnInit(): void {
     this.user = this.employee.getUser();
-    if(this.user == null){
-      alert("LOGIN Required") 
+    if (this.user == null) {
+      alert('LOGIN Required');
       this.router.navigate(['login']);
-    }
-    else  this.get();
+    } else this.get();
   }
 
-  get(){
+  get() {
     this.list = this.employee.getEmployeelist();
-    console.log(this.list)
-    this.list.forEach(element=>{
-          element.teamNumber =  this.employee.getTeam(element.teamNumber)
-    })
-    
+    console.log(this.list);
+    this.list.forEach((element) => {
+      element.teamNumber = this.employee.getTeam(element.teamNumber);
+    });
   }
 
-  show(id:number){
-    //this.employee.getSingleEmployee(id);
-  
-
-  this.router.navigate(['/employee/employeelist',id],{queryParams:{id}})
-   
-    
+  show(id: number) {
+    this.router.navigate(['/employees', id], {
+      queryParams: { id },
+    });
   }
-
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Employeetype } from './employeetype';
+import { IEmployeeDetails } from './employeetype';
 @Injectable({
   providedIn: 'root'
 
@@ -19,13 +19,13 @@ export class EmpServiceService {
     "HR",
     "Admin"]
    
-   getTeam(teamId: any):any{      
+   getTeam(teamId: number):string{      
        return(this.teamName[Number(teamId)-1]);
    }
  
   
 
- private listofemployee : Employeetype[] =[
+ private listofemployee : IEmployeeDetails[] =[
     {EmployeeName: "AAAA",PhoneNumber: 7894561320,Address:"abc",Password:"xyz231",EmployeeId:111,teamNumber:1},
     {EmployeeName: "BBBB",PhoneNumber: 7894561320,Address:"abc",Password:"abc231",EmployeeId:112,teamNumber:2},
     {EmployeeName: "CCCC",PhoneNumber: 7894561320,Address:"abc",Password:"xdx231",EmployeeId:113,teamNumber:3},
@@ -43,7 +43,7 @@ export class EmpServiceService {
     {EmployeeName: "OOOO",PhoneNumber: 7894561320,Address:"abc",Password:"xyz231",EmployeeId:125,teamNumber:7},
     {EmployeeName: "PPPP",PhoneNumber: 7894561320,Address:"abc",Password:"xyz231",EmployeeId:126,teamNumber:8},
   ]
-  router: any;
+  
   
   private _loginSubject$ = new BehaviorSubject(false);
   public isLoggedIn = this._loginSubject$.asObservable();

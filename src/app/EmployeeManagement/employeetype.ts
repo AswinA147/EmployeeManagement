@@ -1,4 +1,4 @@
-export interface Employeetype  {
+export interface IEmployeeDetails  {
     EmployeeName: string,
     PhoneNumber: number,
     Address: string,

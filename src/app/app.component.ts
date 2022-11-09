@@ -9,7 +9,7 @@ import { EmpServiceService } from './EmployeeManagement/emp-service.service';
 })
 export class AppComponent {
   title = 'employeemanagement';
-  loggedIn:boolean=false;
+  public loggedIn:boolean=false;
   constructor(private emp:EmpServiceService){
     
   }
