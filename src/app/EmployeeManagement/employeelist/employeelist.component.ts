@@ -18,7 +18,6 @@ import { Router } from '@angular/router';
 })
 export class EmployeelistComponent implements OnInit {
   user: IEmployeeDetails | undefined;
-
   list: IEmployeeDetails[] = [];
 
   constructor(private employee: EmpServiceService, public router: Router) {}
