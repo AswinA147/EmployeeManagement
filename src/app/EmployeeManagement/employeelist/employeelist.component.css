@@ -1,0 +1,8 @@
+mat-grid-tile {
+    background: rgb(31, 89, 94);
+    color:white;
+    opacity: .7;
+  }
+mat-grid-tile:hover {
+  opacity: 1;
+}  

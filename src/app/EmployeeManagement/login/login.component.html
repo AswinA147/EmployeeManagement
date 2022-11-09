@@ -1,0 +1,25 @@
+
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit(id.valueAsNumber,pass.value)">
+    <div>   
+        <label>
+            Employee Id :
+        </label> 
+        <input formControlName="id" type="number" placeholder="Enter Empolyee Id" required #id>
+        <br>
+        <label>
+            Password : 
+        </label>
+        <input formControlName="pass" type="password" placeholder="Enter password" required #pass>
+        <br>
+        <button type="submit" [disabled]="loginForm.invalid">Submit</button>
+    </div>
+</form> -->
+<div class="mainLogin" style="    text-align: center;background-color: darkgray;">
+    <form [formGroup]="loginForm" class="form" (ngSubmit)="onSubmit()"><br>
+        <div *ngFor="let data of formFields" class="fields">
+            <label style="margin: 20px;">{{data.name}} : </label>
+            <input style="margin:20px" type="{{data.type}}" placeholder=" enter {{data.name}}" formControlName="{{data.name}}" /><br>
+        </div><br>
+        <button type="submit" [disabled]="loginForm.invalid" value="Submit" style="margin:20px ; padding:10px">Submit</button>
+    </form>
+</div>
