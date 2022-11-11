@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
     var id = this.loginForm.get('username')?.value;
     var pass = this.loginForm.get('password')?.value;
 
-    if (this.emp.ValidateEmployee(id, pass)) {
+    if (this.emp.ValidateEmployee(Number(id), pass)) {
       this.router.navigate(['/employees', id], {
         queryParams: { id },
       });
