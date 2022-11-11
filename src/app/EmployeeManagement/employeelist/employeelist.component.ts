@@ -17,7 +17,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./employeelist.component.css'],
 })
 export class EmployeelistComponent implements OnInit {
-  user: IEmployeeDetails | undefined;
+  user: IEmployeeDetails  = {
+    EmployeeId: 0,
+    EmployeeName: '',
+    teamNumber: 0,
+    Password: '',
+    Address: '',
+    PhoneNumber: 0,
+  };;
   list: IEmployeeDetails[] = [];
 
   constructor(private employee: EmpServiceService, public router: Router) {}
