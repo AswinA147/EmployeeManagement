@@ -24,13 +24,12 @@ export class LoginComponent implements OnInit {
     private emp: EmpServiceService,
     private httpClient: HttpClient,
     private router: Router,
-    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
     this.httpClient
-      .get<any[]>('/assets/FormData.json')
-      .subscribe((formFields: any) => {
+      .get<IFormDetails[]>('/assets/FormData.json')
+      .subscribe((formFields: IFormDetails[]) => {
         for (const formField of formFields) {
           this.loginForm.addControl(
             formField.name,

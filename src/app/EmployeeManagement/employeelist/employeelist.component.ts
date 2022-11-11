@@ -34,7 +34,7 @@ export class EmployeelistComponent implements OnInit {
     this.list = this.employee.getEmployeelist();
     console.log(this.list);
     this.list.forEach((element) => {
-      element.teamNumber = this.employee.getTeam(element.teamNumber);
+      element.teamNumber = this.employee.getTeam(Number(element.teamNumber));
     });
   }
 

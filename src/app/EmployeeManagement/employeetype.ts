@@ -4,6 +4,6 @@ export interface IEmployeeDetails  {
     Address: string,
     Password: string,
     EmployeeId: number,
-    teamNumber: any
+    teamNumber: number | string;
 
 }

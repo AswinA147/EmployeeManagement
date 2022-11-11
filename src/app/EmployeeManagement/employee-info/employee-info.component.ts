@@ -47,6 +47,6 @@ export class EmployeeInfoComponent implements OnInit {
     this.EmployeeId = this.singleEmployeeDetails?.EmployeeId;
     this.Address = this.singleEmployeeDetails?.Address;
     this.PhoneNumber = this.singleEmployeeDetails?.PhoneNumber;
-    this.teamName = this.emp.getTeam(this.singleEmployeeDetails?.teamNumber);
+    this.teamName = this.emp.getTeam(Number(this.singleEmployeeDetails?.teamNumber));
   }
 }
