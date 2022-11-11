@@ -167,7 +167,7 @@ export class EmpServiceService {
     return JSON.parse(listofemp || '{}');
   }
 
-  ValidateEmployee(id: any, pass: any): boolean {
+  ValidateEmployee(id: number, pass: string): boolean {
     let flag = 0;
 
     this.listofemployee.forEach((element) => {

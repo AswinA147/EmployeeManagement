@@ -8,7 +8,6 @@ import {
 import { EmpServiceService } from '../emp-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth-service.service';
 import { IFormDetails } from '../iform-details';
 
 @Component({
